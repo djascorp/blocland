@@ -1,8 +1,9 @@
 import { randomUUID } from "crypto";
 import { BlocType, IBloc } from "./ibloc";
+import { generateRandomId } from "../../utils/primitive";
 
 export class BlocVertical implements IBloc{
-    id: string = randomUUID();
+    id: string = generateRandomId();
     type: BlocType = BlocType.VERTICAL_LAYOUT;
     name: string;
     data: unknown;

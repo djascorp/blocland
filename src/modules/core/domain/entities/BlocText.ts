@@ -1,8 +1,8 @@
-import { randomUUID } from "crypto";
+import { generateRandomId } from "../../utils/primitive";
 import { BlocType, IBloc } from "./ibloc";
 
 export class BlocText implements IBloc{
-    id: string = randomUUID();
+    id: string = generateRandomId();
     type: BlocType = BlocType.TEXT;
     name: string = '';
     data: unknown;
