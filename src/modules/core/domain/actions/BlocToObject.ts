@@ -7,12 +7,9 @@ export class BlocToObject implements IAction<object>{
         this.bloc = bloc;
     }
     blocToObject(bloc: IBloc) : object {
-        
-        
         return {
             id: bloc.id,
             name: bloc.name,
-            data: bloc.data,
             property: bloc.property,
             type: bloc.type,
             children: bloc.children?.map(b => this.blocToObject(b as unknown as IBloc))

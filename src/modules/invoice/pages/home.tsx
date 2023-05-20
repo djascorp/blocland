@@ -7,8 +7,8 @@ import { BlocVertical } from "../../core/domain/entities/BlocVertical";
 export const HomePage = () => {
     const parent_Bloc = new BlocVertical({ name: 'VB' })
 
-    const text_bloc: IBloc = new BlocText({ name: 'BT', data: "Hello Bloc" });
-    const text_bloc_2: IBloc = new BlocText({ name: 'BT2', data: "Second Bloc" });
+    const text_bloc: IBloc = new BlocText({ name: 'BT', property:{ text: "Hello Bloc"} });
+    const text_bloc_2: IBloc = new BlocText({ name: 'BT2', property: {text: "Second Bloc"} });
     const [counter, setCounter] = useState(0);
 
     parent_Bloc.addChilden([text_bloc_2]);
@@ -29,7 +29,7 @@ export const HomePage = () => {
                 {counter}
             </div>
             <div>
-                <BlocElement bloc={parent_Bloc} />
+                <BlocElement bloc={parent_Bloc as IBloc} />
             </div>
 
         </div>

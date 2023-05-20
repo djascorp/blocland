@@ -5,13 +5,12 @@ export class BlocText implements IBloc{
     id: string = generateRandomId();
     type: BlocType = BlocType.TEXT;
     name: string = '';
-    data: unknown;
-    property: unknown = {};
+    property: object & {text : string };
     children?: Partial<IBloc>[] | undefined = [];
 
-    constructor(bloc_data: {name?: string, data?: string}){
+    constructor(bloc_data: {name?: string, property?: object & {text : string }}){
         this.name = bloc_data.name!;
-        this.data = bloc_data.data!;
+        this.property = bloc_data.property!;
     }
     
 

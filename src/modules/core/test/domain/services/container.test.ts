@@ -16,7 +16,7 @@ describe("Main Container", () => {
     it("It should console log as default when log is use in container", () => {
         const container = new Container({logger});
         const consoleLogSpy = jest.spyOn(console,"log").mockImplementation();
-        const text_bloc : IBloc = new BlocText({name: 'Text Bloc', data: 'Djasnive'});
+        const text_bloc : IBloc = new BlocText({name: 'Text Bloc', property:{text: 'Djasnive'}});
         container.log("TEST LOG", text_bloc, null);
         expect(consoleLogSpy).toBeCalled();
     })
@@ -38,7 +38,7 @@ describe("Main Container", () => {
             rootBloc: main_bloc
         });
         expect(container.registeredBlocs.length).toEqual(1);
-        const text_bloc : IBloc = new BlocText({name: 'HW', data: 'Hello World' });
+        const text_bloc : IBloc = new BlocText({name: 'HW', property: {text: 'Hello World'} });
         container.addChild(main_bloc,text_bloc);
         expect(container.registeredBlocs.length).toEqual(2);
         expect(main_bloc.children![0]).toBe(text_bloc);
@@ -51,7 +51,7 @@ describe("Main Container", () => {
             rootBloc: main_bloc
         });
         expect(container.registeredBlocs.length).toEqual(1);
-        const text_bloc : IBloc = new BlocText({name: 'HW', data: 'Hello World' });
+        const text_bloc : IBloc = new BlocText({name: 'HW', property:{text: 'Hello World'} });
         container.addChild(main_bloc,text_bloc);
         expect(container.registeredBlocs.length).toEqual(2);
         expect(main_bloc.children![0]).toBe(text_bloc);

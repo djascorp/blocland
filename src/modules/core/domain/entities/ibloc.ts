@@ -9,8 +9,7 @@ export interface IBloc{
     id: string,
     type: BlocType,
     name: string,
-    data: unknown,
-    property: unknown,
+    property: object,
     children?: Array<Partial<IBloc>>
 
     addChilden(children: Array<IBloc>): void
