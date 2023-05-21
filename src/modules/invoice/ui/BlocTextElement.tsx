@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PropsBloc } from "./BlocElement";
+import { BlocText } from "../../core/domain/entities/BlocText";
 
 
 export const BlocTextElement = (props: PropsBloc) => {
-    const { bloc } = props;
-    const { text } = bloc.property as unknown as  { text : string};
-    const [text_value] = useState(text);
+    const { bloc }  = props;
+
     return (
         <div>
-            { text_value}
+            { (bloc as BlocText).property.text }
         </div>
     )
 }

@@ -6,8 +6,8 @@ import { Logger } from "./logger";
 
 export class Container implements IContainer{
     rootBloc!: IBloc;
-    registeredBlocs!: IBloc[];
-    registeredBlocsById!: Map<string, IBloc>;
+    registeredBlocs: IBloc[] = [];
+    registeredBlocsById: Map<string, IBloc> = new Map<string,IBloc>();
     logger!: Logger;  
 
     constructor(params : { logger : Logger }){
@@ -19,7 +19,9 @@ export class Container implements IContainer{
     init(containerParams: Partial<ContainerParams>): void {
         this.rootBloc = containerParams.rootBloc!;
         this.registeredBlocs = [this.rootBloc];
-        this.registeredBlocsById = new Map<string,IBloc>();
+        if(containerParams.bloc_container){
+            this.registeredBlocsById = containerParams.bloc_container;
+        }
         this.registeredBlocsById.set(this.rootBloc.id, this.rootBloc);
     }
     log(action: string, relatedBloc: IBloc, value: unknown): void {

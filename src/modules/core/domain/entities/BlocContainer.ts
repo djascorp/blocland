@@ -5,7 +5,6 @@ export class BlocContainer implements IBloc{
     id: string = generateRandomId();
     type: BlocType = BlocType.HORIZONTAL_LAYOUT;
     name: string;
-    data: unknown;
     property: object = {};
     children?: Partial<IBloc>[] | undefined = [];
     

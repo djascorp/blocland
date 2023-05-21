@@ -1,6 +1,7 @@
 import { IBloc } from "./ibloc";
 export interface ContainerParams{
-    rootBloc: IBloc
+    rootBloc: IBloc,
+    bloc_container: Map<string,IBloc>
 }
 
 
