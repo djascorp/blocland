@@ -5,7 +5,7 @@ import { IBloc } from "../../core/domain/entities/ibloc";
 export const BlocVerticalElement = (props: PropsBloc) => {
     const { bloc } = props;
     return (
-        <div>
+        <div style={{display: 'flex', flexDirection: 'column'}}>
             {bloc.children?.map(child => <BlocElement key={child.id} bloc={child as IBloc} />)}
         </div>
     )
