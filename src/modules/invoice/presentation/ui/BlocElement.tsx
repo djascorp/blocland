@@ -1,6 +1,6 @@
 import React from 'react'
-import { IBloc } from '../../core/domain/entities/ibloc'
-import { BLOC_TO_ELEMENT } from '../constant/bloc_to_element'
+import { IBloc } from '../../../core/domain/entities/ibloc'
+import { BLOC_TO_ELEMENT } from '../../constant/bloc_to_element'
 
 export interface PropsBloc  {
     bloc: IBloc

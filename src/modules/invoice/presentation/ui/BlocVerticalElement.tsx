@@ -1,6 +1,6 @@
 import React from "react";
 import { BlocElement, PropsBloc } from "./BlocElement";
-import { IBloc } from "../../core/domain/entities/ibloc";
+import { IBloc } from "../../../core/domain/entities/ibloc";
 
 export const BlocVerticalElement = (props: PropsBloc) => {
     const { bloc } = props;

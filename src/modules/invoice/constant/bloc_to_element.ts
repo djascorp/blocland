@@ -1,7 +1,7 @@
 import { BlocType } from "../../core/domain/entities/ibloc"
-import { BlocHorizontalElement } from "../ui/BlocHorizontalElement";
-import { BlocTextElement } from "../ui/BlocTextElement";
-import { BlocVerticalElement } from "../ui/BlocVerticalElement";
+import { BlocHorizontalElement } from "../presentation/ui/BlocHorizontalElement";
+import { BlocTextElement } from "../presentation/ui/BlocTextElement";
+import { BlocVerticalElement } from "../presentation/ui/BlocVerticalElement";
 
 export const BLOC_TO_ELEMENT: Map<BlocType,unknown > = new Map();
 

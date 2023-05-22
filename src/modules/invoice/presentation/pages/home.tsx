@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from "react"
-import { IBloc } from "../../core/domain/entities/ibloc"
-import { BlocText } from "../../core/domain/entities/BlocText"
+import { IBloc } from "../../../core/domain/entities/ibloc"
+import { BlocText } from "../../../core/domain/entities/BlocText"
 import { BlocElement } from "../ui/BlocElement";
-import { BlocVertical } from "../../core/domain/entities/BlocVertical";
-import { BlocHorizontal } from "../../core/domain/entities/BlocHorizontal";
-import { Container } from "../../core/domain/services/container";
-import { Logger } from "../../core/domain/services/logger";
-import { Master } from "../../core/domain/services/master";
-import { generateRandomId } from "../../core/utils/primitive";
+import { BlocVertical } from "../../../core/domain/entities/BlocVertical";
+import { BlocHorizontal } from "../../../core/domain/entities/BlocHorizontal";
+import { Container } from "../../../core/domain/services/container";
+import { Logger } from "../../../core/domain/services/logger";
+import { Master } from "../../../core/domain/services/master";
+import { generateRandomId } from "../../../core/utils/primitive";
 import { BlocTextElement } from "../ui/BlocTextElement";
-import { useContainer } from "../domain/use_container";
+import { useContainer } from "../../domain/use_container";
 
 class Test {
     
