@@ -5,7 +5,9 @@ import { DesignPage } from './modules/invoice/presentation/pages/design';
 
 function App() {
   return (
-    <DesignPage />
+    <div className='App'>
+      <DesignPage  />
+    </div>
   );
 }
 

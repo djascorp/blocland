@@ -9,7 +9,7 @@ import { Logger } from "../../../core/domain/services/logger";
 import { Master } from "../../../core/domain/services/master";
 import { generateRandomId } from "../../../core/utils/primitive";
 import { BlocTextElement } from "../ui/BlocTextElement";
-import { useContainer } from "../../domain/use_container";
+import { useContainer } from "../../hooks/useContainer";
 
 class Test {
     
