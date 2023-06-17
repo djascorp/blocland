@@ -18,27 +18,12 @@ export const Canevas = ({ data }: { data: unknown }) => {
   const { parent_bloc, container } = useContainer();
 
 
-  const [{ canDrop, isOver }, drop] = useDrop(() => ({
-    accept: 'LAYOUT',
-    drop: (item) => {
-      console.log("DROP FROM CONTAINER",item);
-      return { target: 'CANEVAS' , container};
-    },
-    collect: (monitor) => ({
-      isOver: monitor.isOver(),
-      canDrop: monitor.canDrop(),
-    }),
-  }))
-
-
-
-
 
   return (
     <>
       {/* <Handle type="target" position={Position.Top} /> */}
-      <div style={canevasStyle} ref={drop}>
-        <BlocElement bloc={parent_bloc} />
+      <div style={canevasStyle} >
+        <BlocElement  bloc={parent_bloc} />
       </div>
       {/* <Handle type="source" position={Position.Bottom} id="a" /> */}
     </>

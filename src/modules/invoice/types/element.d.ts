@@ -1,3 +1,5 @@
+import { IBloc } from "../../core/domain/entities/ibloc";
+
 export interface ElementITemProps {
     icon: string,
     name: string,
@@ -6,5 +8,6 @@ export interface ElementITemProps {
 }
 export interface DropResult{
     target: string,
-    container: Container
+    container: Container,
+    parent: IBloc
 }

@@ -11,7 +11,7 @@ export const ElementItem = ({element}: {element: ElementITemProps}) => {
         item: element,
         end: (item, monitor) => {
           const dropResult = monitor.getDropResult<DropResult>()
-          dropResult?.container.addChild(dropResult.container.rootBloc,item.factory?.make()!)
+          dropResult?.container.addChild(dropResult.parent,item.factory?.make()!)
           console.log(dropResult);
         },
         collect: (monitor) => ({
