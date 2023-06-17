@@ -1,20 +1,18 @@
 import { useDrag } from "react-dnd";
+import { Container } from "../../../../core/domain/services/container";
+import { Factory } from "../../../../core/domain/factories/factory";
+import { DropResult, ElementITemProps } from "../../../types/element";
 
-export interface ElementITemProps {
-    icon: string,
-    name: string,
-    type: string,
-}
+
 
 export const ElementItem = ({element}: {element: ElementITemProps}) => {
     const [{ isDragging }, drag] = useDrag(() => ({
         type: element.type,
-        item: { name: element.name },
+        item: element,
         end: (item, monitor) => {
-        //   const dropResult = monitor.getDropResult<DropResult>()
-        //   if (item && dropResult) {
-        //     alert(`You dropped ${item.name} into ${dropResult.name}!`)
-        //   }
+          const dropResult = monitor.getDropResult<DropResult>()
+          dropResult?.container.addChild(dropResult.container.rootBloc,item.factory?.make()!)
+          console.log(dropResult);
         },
         collect: (monitor) => ({
           isDragging: monitor.isDragging(),

@@ -3,14 +3,17 @@ import { Grid, Input } from "antd"
 import React from "react"
 import { ElementItem } from "./ElementItem"
 import { useLayoutSearch } from "../../../states/sidebar.state";
+import { BlocType } from "../../../../core/domain/entities/ibloc";
+import { BlocVerticalFactory } from "../../../../core/domain/factories/BlocVerticalFactory";
+import { BlocHorizontalFactory } from "../../../../core/domain/factories/BlocHorizontalFactory";
+import { Factory } from "../../../../core/domain/factories/factory";
 
 const elements = [
-    { icon: '', name: 'TEXT', type: 'LAYOUT' },
-    { icon: '', name: 'LOGO', type: 'LAYOUT' },
-    { icon: '', name: 'IMAGE', type: 'LAYOUT' },
-    { icon: '', name: 'TABLE', type: 'LAYOUT' },
+    { icon: '', name: 'Border Bloc', type: 'LAYOUT', layout_type: BlocType.BORDER_LAYOUT , factory: null},
+    { icon: '', name: 'Vertical Bloc', type: 'LAYOUT', layout_type: BlocType.VERTICAL_LAYOUT, factory: (new BlocVerticalFactory) as Factory },
+    { icon: '', name: 'Horizontal Bloc', type: 'LAYOUT', layout_type: BlocType.HORIZONTAL_LAYOUT, factory: (new BlocHorizontalFactory) as Factory },
+    { icon: '', name: 'Absolute Bloc', type: 'LAYOUT', layout_type: BlocType.ABSOLUTE_LAYOUT, factory: null },
 ];
-
 
 export const Layouts = () => {
     const {layoutSearch, setLayoutSearch} = useLayoutSearch();

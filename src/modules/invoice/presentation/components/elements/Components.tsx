@@ -4,10 +4,10 @@ import { useComponentSearch } from "../../../states/sidebar.state";
 import { ElementItem } from "./ElementItem";
 
 const elements = [
-    { icon: '', name: 'Border Bloc', type: 'COMPONENT' },
-    { icon: '', name: 'Vertical Bloc', type: 'COMPONENT' },
-    { icon: '', name: 'Horizontal Bloc', type: 'COMPONENT' },
-    { icon: '', name: 'Absolute Bloc', type: 'COMPONENT' },
+    { icon: '', name: 'TEXT', type: 'COMPONENT', factory: null },
+    { icon: '', name: 'LOGO', type: 'COMPONENT', factory: null },
+    { icon: '', name: 'IMAGE', type: 'COMPONENT', factory: null },
+    { icon: '', name: 'TABLE', type: 'COMPONENT', factory: null },
 ];
 
 export const Components = () => {
