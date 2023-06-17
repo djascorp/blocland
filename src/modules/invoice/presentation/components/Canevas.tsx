@@ -1,5 +1,6 @@
 import { ChangeEvent } from 'react';
 import { useCallback } from 'react';
+import { useDrop } from 'react-dnd';
 import { Handle, Position } from 'reactflow';
 const canevasStyle: React.CSSProperties = {
     width: 300,
@@ -14,10 +15,19 @@ export const Canevas = ({ data }: {data: unknown}) => {
     console.log(evt.target.value);
   }, []);
 
+  const [{ canDrop, isOver }, drop] = useDrop(() => ({
+    accept: 'LAYOUT',
+    drop: () => ({ name: 'Dustbin' }),
+    collect: (monitor) => ({
+      isOver: monitor.isOver(),
+      canDrop: monitor.canDrop(),
+    }),
+  }))
+
   return (
     <>
       <Handle type="target" position={Position.Top} />
-      <div style={canevasStyle}>
+      <div style={canevasStyle} ref={drop}>
       </div>
       <Handle type="source" position={Position.Bottom} id="a" />
     </>
