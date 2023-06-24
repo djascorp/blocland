@@ -10,6 +10,8 @@ const canevasStyle: React.CSSProperties = {
   height: 500,
   backgroundColor: '#fff',
   border: '1px solid #aeaeae',
+  display: 'grid',
+  gridTemplate: '1fr',
 };
 
 

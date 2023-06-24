@@ -1,18 +1,17 @@
 import { SearchOutlined } from "@ant-design/icons"
-import { Grid, Input } from "antd"
-import React from "react"
+import { Input } from "antd"
 import { ElementItem } from "./ElementItem"
 import { useLayoutSearch } from "../../../states/sidebar.state";
 import { BlocType } from "../../../../core/domain/entities/ibloc";
 import { BlocVerticalFactory } from "../../../../core/domain/factories/BlocVerticalFactory";
 import { BlocHorizontalFactory } from "../../../../core/domain/factories/BlocHorizontalFactory";
-import { Factory } from "../../../../core/domain/factories/factory";
+import { BlocBorderFactory } from "../../../../core/domain/factories/BlocBorderFactory";
 
 const elements = [
-    { icon: '', name: 'Border Bloc', type: 'LAYOUT', layout_type: BlocType.BORDER_LAYOUT , factory: null},
-    { icon: '', name: 'Vertical Bloc', type: 'LAYOUT', layout_type: BlocType.VERTICAL_LAYOUT, factory: (new BlocVerticalFactory) as Factory },
-    { icon: '', name: 'Horizontal Bloc', type: 'LAYOUT', layout_type: BlocType.HORIZONTAL_LAYOUT, factory: (new BlocHorizontalFactory) as Factory },
-    { icon: '', name: 'Absolute Bloc', type: 'LAYOUT', layout_type: BlocType.ABSOLUTE_LAYOUT, factory: null },
+    { icon: '', name: 'Border Bloc', type: 'LAYOUT', layout_type: BlocType.BORDER_LAYOUT , factory: (new BlocBorderFactory)},
+    { icon: '', name: 'Vertical Bloc', type: 'LAYOUT', layout_type: BlocType.VERTICAL_LAYOUT, factory: (new BlocVerticalFactory)  },
+    { icon: '', name: 'Horizontal Bloc', type: 'LAYOUT', layout_type: BlocType.HORIZONTAL_LAYOUT, factory: (new BlocHorizontalFactory)  },
+    { icon: '', name: 'Absolute Bloc', type: 'LAYOUT', layout_type: BlocType.ABSOLUTE_LAYOUT, factory: null  },
 ];
 
 export const Layouts = () => {

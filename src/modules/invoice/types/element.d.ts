@@ -1,3 +1,4 @@
+import { LegacyRef } from "react";
 import { IBloc } from "../../core/domain/entities/ibloc";
 
 export interface ElementITemProps {
@@ -10,4 +11,9 @@ export interface DropResult{
     target: string,
     container: Container,
     parent: IBloc
+}
+
+export interface PropsBloc {
+    bloc: IBloc,
+    reference?: LegacyRef,
 }

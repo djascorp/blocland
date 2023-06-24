@@ -3,10 +3,8 @@ import { IBloc } from '../../../core/domain/entities/ibloc'
 import { BLOC_TO_ELEMENT } from '../../constant/bloc_to_element'
 import { useDrop } from 'react-dnd'
 import { useContainer } from '../../states/bloc.state'
+import { PropsBloc } from '../../types/element'
 
-export interface PropsBloc {
-    bloc: IBloc
-}
 
 
 export const BlocElement = (props: PropsBloc) => {
@@ -36,10 +34,11 @@ export const BlocElement = (props: PropsBloc) => {
     }))
 
     return (
-        <div ref={drop} style={{width: '100%' , height: '100%'}}>
+        <>
             {React.createElement(component, {
                 bloc: bloc,
+                reference: drop
             })}
-        </div>
+        </>
     )
 }

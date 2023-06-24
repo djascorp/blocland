@@ -1,17 +1,17 @@
 import React from "react";
-import { BlocElement, PropsBloc } from "./BlocElement";
+import { BlocElement } from "./BlocElement";
 import { IBloc } from "../../../core/domain/entities/ibloc";
+import { PropsBloc } from "../../types/element";
 
 export const BlocHorizontalElement = (props: PropsBloc) => {
-    const { bloc } = props;
+    const { bloc, reference } = props;
     return (
-        <div style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            backgroundColor: "#f2aeae",
+        <div ref={reference} style={{
+            display: "grid",
+            gridTemplateRows: '1fr',
+            border: "0.5px solid green",
         }}>
-            <h5>{bloc.id}</h5>
+            &nbsp;
             {bloc.children?.map(child => <BlocElement key={child.id} bloc={child as IBloc} />)}
         </div>
     )

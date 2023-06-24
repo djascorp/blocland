@@ -1,9 +1,9 @@
-import { BlocHorizontal } from "../entities/BlocHorizontal"
+import { BlocBorder } from "../entities/BlocBorder"
 import { Factory } from "./factory";
 
-export class BlocHorizontalFactory implements Factory<BlocHorizontal>{
-    make(): BlocHorizontal {
-        return new BlocHorizontal({name: 'NEW_BLOC'});
+export class BlocBorderFactory implements Factory<BlocBorder>{
+    make(): BlocBorder {
+        return new BlocBorder({name: 'NEW_BLOC'});
     }
 
 }
