@@ -9,14 +9,14 @@ export interface PropsBlocBorder extends PropsBloc {
 }
 
 export const BlocBorderElement = (props: PropsBlocBorder) => {
-    const { bloc, reference } = props;
+    const { bloc, reference,className } = props;
     return (
         <div ref={reference} style={{
             display: 'grid',
             gridTemplateRows: '1fr 1fr 1fr',
             gridTemplateColumns: '1fr 1fr 1fr',
             border: "0.5px solid blue",
-        }}>
+        }} className={className}>
             <div>
                 &nbsp;
                 {props.bloc.north && <BlocElement key={props.bloc.north.id} bloc={props.bloc.north as IBloc} />}

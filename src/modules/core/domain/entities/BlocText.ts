@@ -13,6 +13,13 @@ export class BlocText implements IBloc{
         this.property = bloc_data.property!;
     }
     
+    beforeChildrenAdded(children: IBloc[]): void {
+        throw new Error("Method not implemented.");
+    }
+    afterChildrenAdded(children: IBloc[]): void {
+        throw new Error("Method not implemented.");
+    }
+    
 
     addChilden(children: IBloc[]): void {
         throw new Error("Text bloc doesn't have child Bloc");

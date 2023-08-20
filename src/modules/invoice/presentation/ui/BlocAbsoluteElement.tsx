@@ -11,7 +11,7 @@ export const BlocAbsoluteElement = (props: PropsBloc) => {
             border: "0.5px solid blue",
             }}>
                 &nbsp;
-            {bloc.children?.map(child => <BlocElement key={child.id} bloc={child as IBloc} />)}
+            {bloc.children?.map(child => <BlocElement key={child.id} bloc={child as IBloc} className='child-aboslute' />)}
         </div>
     )
 }

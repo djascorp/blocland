@@ -8,13 +8,13 @@ import { PropsBloc } from '../../types/element'
 
 
 export const BlocElement = (props: PropsBloc) => {
-    const { bloc } = props;
+    const { bloc, ...rest } = props;
 
     if(!BLOC_TO_ELEMENT.has(bloc.type)){
         throw `THE BLOC  ${bloc} WAS NOT REGISTERED!`;
     }
 
-    const component = BLOC_TO_ELEMENT.get(bloc.type) as React.FC<PropsBloc>;
+    const Component = BLOC_TO_ELEMENT.get(bloc.type) as React.FC<PropsBloc>;
     const {container} = useContainer();
 
     // Gerer le drag des components
@@ -34,11 +34,13 @@ export const BlocElement = (props: PropsBloc) => {
     }))
 
     return (
-        <>
-            {React.createElement(component, {
-                bloc: bloc,
-                reference: drop
-            })}
-        </>
+        // <>
+        //     {React.createElement(component, {
+        //         bloc: bloc,
+        //         reference: drop,
+        //         className: className,
+        //     })}
+        // </>
+        <Component bloc={bloc} reference={drop} {...rest} />
     )
 }

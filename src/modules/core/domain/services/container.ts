@@ -13,6 +13,7 @@ export class Container implements IContainer{
     constructor(params : { logger : Logger }){
         this.logger = params.logger;
     }
+    
    
 
 
@@ -49,6 +50,7 @@ export class Container implements IContainer{
         // return undefined;
         return this.registeredBlocsById.get(id)
     }
+    
     addChild(parentBloc: IBloc, childBloc: IBloc): void {
         this.log(LogAction.ADD_CHILD, parentBloc, childBloc);
         parentBloc.addChilden([childBloc]);

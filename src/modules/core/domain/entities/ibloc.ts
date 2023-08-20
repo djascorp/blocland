@@ -12,7 +12,9 @@ export interface IBloc{
     type: BlocType,
     name: string,
     property: object,
-    children?: Array<Partial<IBloc>>
+    children?: Array<Partial<IBloc>>,
+    beforeChildAddedListeners?: Array<CallableFunction>,
+    afterChildAddedListeners?: Array<CallableFunction>,
 
     addChilden(children: Array<IBloc>): void
     removeChild(child: IBloc): IBloc
