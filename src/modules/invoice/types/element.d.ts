@@ -16,4 +16,5 @@ export interface DropResult{
 export interface PropsBloc {
     bloc: IBloc,
     reference?: LegacyRef,
+    className?: string, 
 }

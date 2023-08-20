@@ -1,4 +1,5 @@
 import { BlocType } from "../../core/domain/entities/ibloc"
+import { BlocAbsoluteElement } from "../presentation/ui/BlocAbsoluteElement";
 import { BlocBorderElement } from "../presentation/ui/BlocBorderElement";
 import { BlocHorizontalElement } from "../presentation/ui/BlocHorizontalElement";
 import { BlocTextElement } from "../presentation/ui/BlocTextElement";
@@ -10,3 +11,4 @@ BLOC_TO_ELEMENT.set(BlocType.TEXT,BlocTextElement);
 BLOC_TO_ELEMENT.set(BlocType.VERTICAL_LAYOUT,BlocVerticalElement);
 BLOC_TO_ELEMENT.set(BlocType.HORIZONTAL_LAYOUT,BlocHorizontalElement);
 BLOC_TO_ELEMENT.set(BlocType.BORDER_LAYOUT,BlocBorderElement);
+BLOC_TO_ELEMENT.set(BlocType.ABSOLUTE_LAYOUT,BlocAbsoluteElement);
