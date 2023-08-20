@@ -7,18 +7,25 @@ export class BlocContainer implements IBloc{
     name: string;
     property: object = {};
     children?: Partial<IBloc>[] | undefined = [];
-    beforeChildAddedListeners?: Array<CallableFunction> = [];
-    afterChildAddedListeners?: Array<CallableFunction> = [];
+    beforeChildAddedListeners: Array<CallableFunction> = [];
+    afterChildAddedListeners: Array<CallableFunction> = [];
     
     constructor(bloc_data: {name?: string}){
         this.name = bloc_data.name!;
     }
 
     beforeChildrenAdded(children: IBloc[]): void {
-        this.beforeChildAddedListeners?.forEach(fn => fn(children));
+        if(this.beforeChildAddedListeners.length == 0){
+            return;
+        }
+        
+        for(let i = 0; i < this.beforeChildAddedListeners.length; i++){
+            let fn = this.beforeChildAddedListeners[i];
+            fn(children)
+        }
     }
     afterChildrenAdded(children: IBloc[]): void {
-        this.afterChildAddedListeners?.forEach(fn => fn(children));
+        this.afterChildAddedListeners.forEach(fn => fn(children));
     }
     
 
